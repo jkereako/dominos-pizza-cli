@@ -1,5 +1,4 @@
-# Command-line script skeleton
-I've used this script a few times as a starting point for creating simple command-line utilities.
+# Description
+This is one of thousands of utilities for interacting with the Domino's Pizza® API.
 
-# Credit
-The original location of this project is on [Google Code](http://python-script-boilerplate.googlecode.com/svn-history/r4/trunk/scramble.py)
+The intended goal is to be able to interact with the API using Python's standard library.

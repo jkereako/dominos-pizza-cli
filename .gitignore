@@ -1,4 +1,22 @@
-# Byte-compiled / optimized / DLL files
+#-- Generic files
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.log
+Thumbs.db
+
+#-- Virtual environment
+lib/
+bin/
+include/
+
+#-- Data stores
+*.sqlite
+*.sqlite3
+
+#-- Byte-code
 __pycache__/
 *.py[cod]
 
