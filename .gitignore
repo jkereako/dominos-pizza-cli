@@ -7,11 +7,6 @@
 *.log
 Thumbs.db
 
-#-- Virtual environment
-lib/
-bin/
-include/
-
 #-- Data stores
 *.sqlite
 *.sqlite3
