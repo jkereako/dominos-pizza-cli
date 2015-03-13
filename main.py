@@ -13,6 +13,7 @@
 
 # These imports support the boilerplate.
 import sys
+from dominospizza import web_service, urls
 from optparse import OptionParser
 
 import random
@@ -78,6 +79,13 @@ def _main(filename=None):
     return 0
 
 if __name__ == "__main__":
+
+    # TEST
+    req = web_service.GetRequest(urls.store_locator_url(),{'c':'01833', 's':'Jackman'})
+    req.make_request()
+    exit()
+    #TEST
+
     usage = "usage: %prog [options] [filename]"
     parser = OptionParser(usage=usage)
     parser.add_option('--profile', '-P',
