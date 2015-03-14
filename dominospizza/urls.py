@@ -12,10 +12,10 @@ _dominos_tracker_base_url = 'https://trkweb.dominos.com/orderstorage/GetTrackerD
 def store_locator_url():
     return _dominos_api_base_url + 'store-locator'
 
-def store_information_url():
+def store_information_url(store_id):
     return _dominos_api_base_url + 'store/{s}/profile'.format(s=store_id)
 
-def store_menu_url():
+def store_menu_url(store_id):
     return _dominos_api_base_url + 'store/{s}/menu?lang={l}&structured=true'.format(s=store_id,l='en')
 
 def validate_order_url():

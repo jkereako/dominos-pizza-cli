@@ -13,8 +13,9 @@
 
 # These imports support the boilerplate.
 import sys
+import re
 from dominospizza import web_service, urls
-from optparse import OptionParser
+import argparse
 
 import random
 
@@ -80,8 +81,24 @@ def _main(filename=None):
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser(description='Search for Dominos locations near you.')
+
+    parser.add_argument('street_name', metavar='street', nargs='+',
+                       help='Your street name')
+
+    parser.add_argument('zip_code', metavar='zip', nargs='+',
+                       help='Your zip code')
+
+    args = parser.parse_args()
+
+    # Simple zip code validation
+    m = re.match(r'^\d{5}(?:[-\s]\d{4})?$', args.zip_code[0])
+    if m is None:
+        exit('Invalid zip code')
+
     # TEST
-    req = web_service.GetRequest(urls.store_locator_url(),{'c':'01833', 's':'Jackman'})
+    req = web_service.GetRequest(urls.store_locator_url(),{'c':args.zip_code[0],
+        's':' '.join(args.street_name)})
     req.make_request()
     exit()
     #TEST
